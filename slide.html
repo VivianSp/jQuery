@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slide</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        #color1 {
+            background-color: #a906ff;
+        }
+
+        #color2 {
+            background-color: #069fff;
+            display: none;
+        }
+
+        #color3 {
+            background-color: #1ddb15;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Slide</h1>
+    <!--   .box#color$*3>p{Demo}-->
+    <div class="box" id="color1">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color2">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color3">
+        <p>Demo</p>
+    </div>
+
+    <!--    a#btn$[href="#"]{click me}*3-->
+    <a href="#" id="btn1">click me</a>
+    <a href="#" id="btn2">click me</a>
+    <a href="#" id="btn3">click me</a>
+    <a href="#" id="btn4">click me</a>
+
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#btn1").click(function(){
+            $("#color1").slideUp("fast");
+        });
+        //para que funcione el slideDown el elemento debe tener un display none
+        $("#btn2").click(function(){
+            $("#color2").slideDown("fast");
+        });
+
+        $("#btn3").click(function(){
+            $("#color3").slideToggle(350);
+        });
+
+
+
+
+
+    </script>
+
+</body></html>

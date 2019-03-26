@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Efecto Fade</title>
+</head>
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+    }
+
+    #color1 {
+        background-color: #a906ff;
+    }
+
+    #color2 {
+        background-color: #069fff;
+    }
+
+    #color3 {
+        background-color: #1ddb15;
+    }
+</style>
+
+<body>
+
+    <h1>Efecto Fade</h1>
+    <!--   .box#color$*3>p{Demo}-->
+    <div class="box" id="color1">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color2">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color3">
+        <p>Demo</p>
+    </div>
+
+    <!--    a#btn$[href="#"]{click me}*3-->
+    <a href="#" id="btn1">click me</a>
+    <a href="#" id="btn2">click me</a>
+    <a href="#" id="btn3">click me</a>
+    <a href="#" id="btn4">click me</a>
+
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#btn1").click(function(){
+            $("#color1").fadeOut("slow");
+        });
+        $("#btn2").click(function(){
+            $("#color2").fadeIn("1000");
+        });
+
+        //fadeToggle hace las dos acciones en el mismo boton, fadeIn y fadeOut, 0-100 de transparencia
+        $("#btn3").click(function(){
+            $("#color3").fadeToggle(1000);
+            $("#color2").fadeToggle(2000);
+            $("#color1").fadeToggle(3000);
+        });
+
+        //fadeTo permite indicar a que transparencia va a terminar el efecto, se debe indicar duracion y opacity deseado al final
+        $("#btn4").click(function(){
+            $("#color1").fadeTo(1000,0.3);
+        });
+
+
+
+
+    </script>
+
+</body></html>

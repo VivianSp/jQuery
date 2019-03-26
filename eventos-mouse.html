@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        #color1 {
+            background-color: #a906ff;
+        }
+
+        #color2 {
+            background-color: #069fff;
+        }
+
+        #color3 {
+            background-color: #1ddb15;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Eventos Mouse Enter y Leave</h1>
+    <!--   .box#color$*3>p{Demo}-->
+    <div class="box" id="color1">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color2">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color3">
+        <p>Demo</p>
+    </div>
+
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        //Evento Mouse Enter
+        $("#color1").mouseenter(function() {
+            $("#color1 p").html("El mouse está sobre la caja");
+        });
+
+        //Evento Mouse Leave
+        $("#color2").mouseleave(function(){
+            $("#color2 p").html("El mouse ya está fuera de la caja")
+        });
+
+        //Evento Hover
+        $("#color3").hover(function(){
+            //Accion cuando esta dentro
+            $("#color3 p").html("El mouse esta dentro");
+        }, function(){
+            //Accion cuando esta fuera
+            $("#color3 p").html("El mouse se ha ido");
+        });
+
+    </script>
+
+
+</body></html>

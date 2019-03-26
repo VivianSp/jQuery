@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animate JQuery</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            position: absolute;
+            left: 50px;
+        }
+
+        #color1 {
+            background-color: #a906ff;
+            top: 100px;
+
+        }
+
+        #color2 {
+            background-color: #069fff;
+            top: 250px;
+        }
+
+        #color3 {
+            background-color: #1ddb15;
+            top: 400px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Animate</h1>
+    <!--   .box#color$*3>p{Demo}-->
+    <div class="box" id="color1">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color2">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color3">
+        <p>Demo</p>
+    </div>
+
+    <!--    a#btn$[href="#"]{click me}*3-->
+    <a href="#" id="btn1">click me</a>
+    <a href="#" id="btn2">click me</a>
+    <a href="#" id="btn3">click me</a>
+    <a href="#" id="btn4">click me</a>
+
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        //Metodo .animate()
+        /*
+            $(selector).animate({parametro1, parametro2, ..., parametroFin}, speed, callback);
+        */
+
+        $("#btn1").click(function() {
+            $("#color1").animate({
+                width: "300px",
+                height: "50px",
+                left: "400px"
+            }, 1000, alerta);
+        });
+
+        function alerta() {
+            alert("La animación ha terminado");
+        }
+
+        $("#btn2").click(function() {
+            var move = $("#color2");
+            move.animate({
+                left: "400px",
+                width: "200px"
+            }, 750);
+            move.animate({
+                top: "500px",
+                height: "150px"
+            }, 500);
+            move.animate({
+                left: "50px",
+                width: "100px"
+            }, 750);
+            move.animate({
+                top: "250px",
+                height: "100px"
+            }, 500, animacion2);
+        });
+
+        function animacion2 (){
+            $("#color3").animate({
+                top: "600px",
+                fontSize: "3rem"
+            }, 1000);
+        }
+
+
+    //NOTA: La única propiedad de CSS que NO se puede animar es el background-color
+    </script>
+
+</body></html>

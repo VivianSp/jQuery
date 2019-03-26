@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos JQuery</title>
+</head>
+
+<body>
+    <h1>Eventos JQuery</h1>
+    <h2 id="demo">Demo de evento click</h2>
+    <a href="#" id="btn1">Click me</a>
+
+    <h2 id="demo2">Demo de evento doble click</h2>
+    <a href="#" id="btn2">Doble click</a>
+
+
+
+    <footer></footer>
+    <!--    Cargar libreria de Jquery-->
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function() {
+
+            //Sintaxis Jquery
+            /*
+                $("Selector").action();
+
+                function (){
+
+                }
+            */
+
+            //Evento click
+            $("#btn1").click(function() {
+                //Que pasa cuando activo la acción
+                //Selecciono al elemento que quiero aplicarle una acción
+                $("#demo").html("Haz hecho click");
+            });
+
+            //Evento doble click
+            $("#btn2").dblclick(function() {
+                $("#demo2").html("Haz hecho doble click");
+            });
+
+        });
+    </script>
+
+
+
+</body></html>

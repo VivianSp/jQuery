@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulación CSS</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        #color1 {
+            background-color: #a906ff;
+        }
+
+        #color2 {
+            background-color: #069fff;
+        }
+
+        #color3 {
+            background-color: #1ddb15;
+        }
+
+        #color4 {
+            background-color: #c4ff00;
+        }
+
+
+        .blue {
+            font-size: 2rem;
+            color: blue;
+        }
+
+        .ancho {
+            width: 200px;
+            height: 200px;
+            background-color: #f80101; /*no cambia el color porque prevalece el background-color del ID*/
+        }
+
+        .animate {
+            animation: animacion1 2s forwards infinite alternate;
+        }
+
+        @keyframes animacion1 {
+            0% {transform: translateX(0)}
+            100% {transform: translateX(400px)}
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Manipulación CSS</h1>
+
+    <!--    a#btn$[href="#"]{click me}*3-->
+    <a href="#" id="btn1">click me</a>
+    <a href="#" id="btn2">click me</a>
+    <a href="#" id="btn3">click me</a>
+    <a href="#" id="btn4">click me</a>
+    <a href="#" id="btn5">click me</a>
+
+    <!--   .box#color$*3>p{Demo}-->
+    <div class="box" id="color1">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color2">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color3">
+        <p>Demo</p>
+    </div>
+    <div class="box" id="color4">
+        <p>Demo</p>
+    </div>
+
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script>
+        $("#btn1").click(function(){
+            $("#color1").addClass("blue");
+        });
+        $("#btn2").click(function(){
+            $("#color1").removeClass("blue");
+        });
+        $("#btn3").click(function(){
+            $("#color2").toggleClass("blue ancho");
+        });
+
+        //
+
+        $("#btn4").click(function(){
+            $("#color4").css({
+                "width": "200px",
+                "height": "200px",
+                "background-color": "#f80101",
+                "color": "white"
+            });
+        });
+
+
+        $("#btn5").click(function(){
+            $("#color3").toggleClass("animate");
+        });
+
+
+
+    </script>
+
+</body></html>
